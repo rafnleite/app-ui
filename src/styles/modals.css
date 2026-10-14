@@ -1,0 +1,140 @@
+.modal-global-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(8, 28, 46, .6);
+  backdrop-filter: blur(3px);
+}
+
+.modal-global-dialogo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: calc(100dvh - 3rem);
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid var(--paleta-borda, #e3e6f0);
+  border-radius: var(--ui-raio, .5rem);
+  background: #fff;
+  color: var(--paleta-texto-pagina, #5a5c69);
+  box-shadow: 0 1.5rem 4rem rgba(8, 28, 46, .26);
+  outline: none;
+}
+
+.modal-global-sm { max-width: 480px; }
+.modal-global-md { max-width: 640px; }
+.modal-global-lg { max-width: 860px; }
+.modal-global-xl { max-width: 1140px; }
+
+.modal-global-cabecalho {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-shrink: 0;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--paleta-borda, #e3e6f0);
+  background: var(--paleta-fundo-pagina, #f8f9fc);
+}
+
+.modal-global-titulos { min-width: 0; }
+.modal-global-titulo {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: var(--paleta-primaria, #17476b);
+}
+.modal-global-icone { display: inline-flex; flex-shrink: 0; }
+.modal-global-subtitulo { margin-top: .3rem; font-size: .85rem; line-height: 1.5; }
+.modal-global-fechar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  border-radius: .5rem;
+  background: transparent;
+  color: var(--paleta-texto-pagina, #5a5c69);
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.modal-global-fechar:hover { background: #e8edf3; color: var(--paleta-primaria, #17476b); }
+.modal-global-fechar:focus-visible,
+.modal-global-botao-secundario:focus-visible { outline: 3px solid var(--paleta-primaria, #17476b); outline-offset: 2px; }
+.modal-global-fechar:disabled { cursor: wait; opacity: .45; }
+.modal-global-corpo { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 1.5rem; overscroll-behavior: contain; }
+.modal-global-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: .75rem;
+  flex-shrink: 0;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--paleta-borda, #e3e6f0);
+  background: #fff;
+}
+.modal-global-botao-secundario {
+  padding: .6rem 1.15rem;
+  border: 1px solid var(--paleta-borda, #e3e6f0);
+  border-radius: .5rem;
+  background: #f3f5f8;
+  color: var(--paleta-texto-pagina, #5a5c69);
+  font-size: .875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.modal-global-botao-secundario:hover { background: #e8edf3; }
+.modal-global-botao-secundario:disabled { cursor: wait; opacity: .5; }
+
+/* Os formulários de cada aplicativo mantêm seus campos e espaçamentos, mas
+   usam a mesma linguagem visual de inputs e ações do restante da interface. */
+.modal-global-corpo input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+.modal-global-corpo select,
+.modal-global-corpo textarea {
+  border-color: var(--paleta-borda-destaque, #dddfeb);
+  border-radius: .35rem;
+  color: var(--paleta-texto-pagina, #5a5c69);
+}
+.modal-global-corpo input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):focus,
+.modal-global-corpo select:focus,
+.modal-global-corpo textarea:focus {
+  outline: none;
+  border-color: var(--paleta-input-borda-foco, #8cb9d8);
+  box-shadow: 0 0 0 .2rem var(--paleta-input-sombra-foco, rgba(23, 71, 107, .15));
+}
+.modal-global-rodape > button {
+  min-height: 2.4rem;
+  padding: .5rem 1rem;
+  border-radius: .35rem;
+  font-size: .875rem;
+  font-weight: 600;
+}
+.modal-global-rodape > button.bg-blue-600 { background: var(--paleta-primaria, #17476b); }
+.modal-global-rodape > button.bg-blue-600:hover { background: var(--cor-primario-2, #103450); }
+.modal-global-rodape > button:disabled { opacity: .55; cursor: not-allowed; }
+
+@media (max-width: 640px) {
+  .modal-global-overlay { padding: .65rem; }
+  .modal-global-dialogo { max-height: calc(100dvh - 1.3rem); }
+  .modal-global-cabecalho { padding: 1rem; }
+  .modal-global-corpo { padding: 1rem; }
+  .modal-global-rodape { padding: .85rem 1rem; }
+  .modal-global-titulo { font-size: 1.05rem; }
+  .modal-voo-linha,
+  .modal-ranking-linha,
+  .modal-arquivo-linha { flex-direction: column; align-items: stretch; gap: .75rem; }
+  .modal-voo-metricas,
+  .modal-ranking-metricas { flex-wrap: wrap; justify-content: space-between; gap: .75rem; margin-left: 0; }
+}

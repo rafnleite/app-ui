@@ -1,0 +1,23 @@
+import type { ComponentProps } from 'react';
+import AppShell from './AppShell';
+import AuthLayout from './AuthLayout';
+import Botao from './Botao';
+import Cartao from './Cartao';
+import CampoInput from './CampoInput';
+import CampoBusca from './CampoBusca';
+import Tabela from './Tabela';
+import Paginacao from './Paginacao';
+import Carregando from './Carregando';
+import ModalGlobal from './ModalGlobal';
+
+export { AppShell, AuthLayout, Botao, Cartao, CampoInput, CampoBusca, Tabela, Paginacao, Carregando, ModalGlobal };
+export type { LarguraModal, PropriedadesModalGlobal } from './ModalGlobal';
+export type { PropriedadesBotao } from './Botao';
+export type { PropriedadesCartao } from './Cartao';
+export type { PropriedadesPaginacao } from './Paginacao';
+export type PropriedadesAppShell = ComponentProps<typeof AppShell>;
+export type PropriedadesAuthLayout = ComponentProps<typeof AuthLayout>;
+export type PropriedadesCampoInput = ComponentProps<typeof CampoInput>;
+export type PropriedadesCampoBusca = ComponentProps<typeof CampoBusca>;
+export type PropriedadesTabela = ComponentProps<typeof Tabela>;
+export type PropriedadesCarregando = ComponentProps<typeof Carregando>;
